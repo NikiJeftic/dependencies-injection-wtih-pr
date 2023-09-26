@@ -20,6 +20,9 @@ const renderUsers = async () => {
 };
 
 const app = () => {
+  const config = (window as any).__CONFIG__;
+
+  iocContainer.register("apiConfig", config.api);
   delete (window as any).__CONFIG__;
 
   renderUsers();
